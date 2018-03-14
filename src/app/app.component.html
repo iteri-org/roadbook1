@@ -1,16 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <div class="box_red"><h1>
+  <div class="box_black"><h1>
       {{ title }}
     </h1>
   </div>
-  <div class="box_green">green</div>
+  <div class="box_gray"><h2>POIs:</h2><br/>
+  </div>
   <div class>
     <yaga-map [lat]="51.5768558" [lng]="7.568283" [zoom]="11">
-        <yaga-zoom-control></yaga-zoom-control>
-        <yaga-scale-control [metric]="true" [imperial]="false"></yaga-scale-control>
-        <yaga-attribution-control></yaga-attribution-control>
-        <yaga-tile-layer [url]="'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'" [attribution]="'© OpenStreetMap-Mitwirkende'"></yaga-tile-layer>
+      <yaga-zoom-control></yaga-zoom-control>
+      <yaga-scale-control [metric]="true" [imperial]="false"></yaga-scale-control>
+      <yaga-attribution-control></yaga-attribution-control>
+      <yaga-layers-control>
+        <yaga-tile-layer yaga-base-layer="OSM"  [url]="'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'" [attribution]="'© OpenStreetMap-Mitwirkende'"></yaga-tile-layer>
+        <yaga-tile-layer yaga-base-layer="OTM"  [url]="'http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'" [attribution]="'© OpenStreetMap-Mitwirkende'"></yaga-tile-layer>
+        <yaga-marker yaga-overlay-layer="POI 1" [lat]="51.64" [lng]="7.6"></yaga-marker>
+        <yaga-marker yaga-overlay-layer="POI 2" [lat]="51.64" [lng]="7.65"></yaga-marker>
+        <yaga-marker yaga-overlay-layer="POI 3" [lat]="51.64" [lng]="7.7"></yaga-marker>
+      </yaga-layers-control>
     </yaga-map>
   </div>
   </div>

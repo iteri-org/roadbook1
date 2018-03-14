@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { YagaModule } from '@yaga/leaflet-ng2';
+import * from '@turf/turf';
 
 
 import { AppComponent } from './app.component';
